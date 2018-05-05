@@ -133,7 +133,7 @@ if (isset($_POST['publier']) && $publication!=NULL){
                     <div class="bloc3">
                         <form method="post" action="profil.php">
                             <label for="publication">Entrez votre publication... </label>
-                            <input type="text" class="form-control" name="publication" placeholder="" value="">
+                            <input type="text" class="form-control" name="publication" placeholder="" value=""><br>
                             <button class=" btn btn-xs btn-primary" type="submit" name="publier">Publier</button>
                         </form>
 
