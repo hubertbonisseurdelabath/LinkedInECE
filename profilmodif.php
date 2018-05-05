@@ -148,6 +148,7 @@ if (isset($_POST['modif_profil'])){
               <div class="col-md-6">
                   <h3>Modifiez votre profil</h3>
 <<<<<<< HEAD
+<<<<<<< HEAD
                     <form method="post" class="needs-validation" action="trtm_inscr.php">
                          <div>
                              <label>Photo de profil</label>
@@ -162,6 +163,9 @@ if (isset($_POST['modif_profil'])){
 
 
 
+=======
+             <form method="post"  action="profilmodif.php">
+>>>>>>> origin/master
 
                          </div>
                     <div>
