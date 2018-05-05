@@ -25,9 +25,9 @@ session_start();
 
   <body>
 
-      <nav class="navbar navbar-inverse navbar-dark bg-dark">
+      <nav name="header" class="navbar navbar-inverse ">
         <div class="container-fluid">
-          <ul class="nav navbar-nav">
+          <ul class="nav navbar-nav ">
             <li><a href="accueil.php"><span class="glyphicon glyphicon-home"> LinkedECE</a></li>
             <li><a href="profil.php"><span class="glyphicon glyphicon-user"> Profil</a></li>
             <li><a href="reseaux.php"><span class="glyphicon glyphicon-globe"> Réseaux</a></li>
