@@ -147,14 +147,13 @@ if (isset($_POST['modif_profil'])){
 
               <div class="col-md-6">
                   <h3>Modifiez votre profil</h3>
-<<<<<<< HEAD
-<<<<<<< HEAD
+
                     <form method="post" class="needs-validation" action="trtm_inscr.php">
                          <div>
                              <label>Photo de profil</label>
-=======
+
              <form method="post"  action="profilmodif.php">
->>>>>>> origin/master
+
 
                                 <img src="images/<?php echo $_SESSION['profilpic']; ?>" alt="photoprofil" width="100" height="100" />
 
@@ -163,9 +162,9 @@ if (isset($_POST['modif_profil'])){
 
 
 
-=======
+
              <form method="post"  action="profilmodif.php">
->>>>>>> origin/master
+
 
                          </div>
                     <div>
