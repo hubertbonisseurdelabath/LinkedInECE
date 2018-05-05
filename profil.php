@@ -99,7 +99,7 @@ if (isset($_POST['publier']) && $publication!=NULL){
               <li><a href="albums.php"><span class="glyphicon glyphicon-picture"> Albums</a></li>
               <li><a href="messagerie.php"><span class="glyphicon glyphicon-envelope"> Messagerie</a></li>
             </ul>
-            <ul class="nav navbar-nav navbar-right">
+            <ul class="nav navbar-nav">
               <li><a href="register.php"><span class="glyphicon glyphicon-user"></span> Inscription </a></li>
               <li><a href="connect.php"><span class="glyphicon glyphicon-log-in"></span> Connexion</a></li>
             </ul>
