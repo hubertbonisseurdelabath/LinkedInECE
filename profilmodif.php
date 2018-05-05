@@ -128,8 +128,19 @@ if (isset($_POST['supprimer'])){
 
               <div class="col-md-6">
                   <h3>Modifiez votre profil</h3>
-             <form method="post" class="needs-validation" action="trtm_inscr.php">
+                    <form method="post" class="needs-validation" action="trtm_inscr.php">
+                         <div>
+                             <label>Photo de profil</label>
 
+                                <img src="images/<?php echo $_SESSION['profilpic']; ?>" alt="photoprofil" width="100" height="100" />
+
+                             <input type="image" name="photoprofil" />
+
+
+
+
+
+                         </div>
                     <div>
                       <label for="prenom">Prenom</label>
                       <input type="text" class="form-control" value="<?php echo $_SESSION['prenom'] ?>" name="prenom" placeholder="" value="" required>
