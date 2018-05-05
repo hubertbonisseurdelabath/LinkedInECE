@@ -28,7 +28,26 @@ if (isset($_POST['supprimer'])){
     header("Location:profil.php");
 }
 
+if (isset($_POST['modif_profil'])){
 
+    $_SESSION['email']= $_POST['email'];
+    $_SESSION['nom']=$_POST['nom'];
+    $_SESSION['adresse']=$_POST['adresse'];
+    $_SESSION['prenom']=$_POST['prenom'];
+    $_SESSION['date_naissance']=$_POST['dateNaissance'];
+    $_SESSION['pseudo']=$_POST['pseudo'];
+    $_SESSION['telephone']=$_POST['telephone'];
+
+
+    $req_modif = $pdo->prepare('UPDATE utilisateur SET nom = ?, prenom = ?, email = ?, date_naissance = ?, pseudo = ?, adresse = ?, telephone = ? WHERE id_utilisateur = ?');
+    $req_modif->execute(array($_SESSION['nom'],$_SESSION['prenom'],$_SESSION['email'],$_SESSION['date_naissance'],$_SESSION['pseudo'],$_SESSION['adresse'],$_SESSION['telephone'],$_SESSION['id_utilisateur']));
+    $id_publi =$req_publi['id_publi'];
+    echo id_publi;
+
+    $req1= $pdo->prepare('UPDATE publication SET contenu=? WHERE id_publi=?');
+    $req1->execute(array($modif_publi,$id_publi));
+    header("Location:profil.php");
+}
 
 ?>
 
@@ -128,9 +147,13 @@ if (isset($_POST['supprimer'])){
 
               <div class="col-md-6">
                   <h3>Modifiez votre profil</h3>
+<<<<<<< HEAD
                     <form method="post" class="needs-validation" action="trtm_inscr.php">
                          <div>
                              <label>Photo de profil</label>
+=======
+             <form method="post"  action="profilmodif.php">
+>>>>>>> origin/master
 
                                 <img src="images/<?php echo $_SESSION['profilpic']; ?>" alt="photoprofil" width="100" height="100" />
 
@@ -181,7 +204,7 @@ if (isset($_POST['supprimer'])){
                       </div>
                   </div>
                   <hr class="mb-4">
-                    <a href="connect.php"><button class="btn btn-success btn-lg " name="inscription" type="submit">Modifier</button></a>
+                    <a href="profil.php"><button class="btn btn-success btn-lg " name="modif_profil" type="submit">Modifier</button></a>
                 </form>
           </div>
             <div>

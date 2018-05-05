@@ -121,7 +121,7 @@ if (isset($_POST['publier']) && $publication!=NULL){
                           <li> Date de naissance : <?php echo $_SESSION['date_naissance'] ?></li>
                           <li>Adresse  : <?php echo $_SESSION['adresse'] ?></li>
                           <li>Email : <?php echo $_SESSION['email'] ?></li>
-                          <a href="profilmodif.php"><button class=" btn btn-xs btn-primary" name="modifier_profil"></button></a>
+                          <a href="profilmodif.php"><button class=" btn btn-lg btn-primary" name="modifier_profil">Modifier votre profil</button></a>
                       </div>
                   </ul>
 
