@@ -13,7 +13,7 @@ if (isset($_POST['modifier'])){
 
     $req1= $pdo->prepare('UPDATE publication SET contenu=? WHERE id_publi=?');
     $req1->execute(array($modif_publi,$id_publi));
-    header("Location:profil.php");
+    header("Location:profilmodif.php");
 }
 
 
@@ -126,11 +126,55 @@ if (isset($_POST['supprimer'])){
         </nav>
         <div class="container">
 
-              <nav>
+              <div class="col-md-6">
+                  <h3>Modifiez votre profil</h3>
+             <form method="post" class="needs-validation" action="trtm_inscr.php">
 
+                    <div>
+                      <label for="prenom">Prenom</label>
+                      <input type="text" class="form-control" value="<?php echo $_SESSION['prenom'] ?>" name="prenom" placeholder="" value="" required>
+                    </div>
+                    <div>
+                      <label for="nom">Nom</label>
+                      <input type="text" class="form-control" value="<?php echo $_SESSION['nom'] ?>" name="nom" placeholder="" value="" required>
+                    </div>
 
-                </nav>
-            <section>
+                  <div>
+                    <div class="input-group">
+                        <label for="pseudo">Pseudo</label>
+                        <input type="text" class="form-control" value="<?php echo $_SESSION['pseudo'] ?>" name="pseudo" placeholder="Pseudo" required>
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" value="<?php echo $_SESSION['email'] ?>" name="email" placeholder="you@example.com">
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="adresse">Addresse</label>
+                    <input type="text" class="form-control" value="<?php echo $_SESSION['adresse'] ?>" name="adresse" placeholder="" required>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-5 mb-3">
+                      <label for="telephone">Telephone</label>
+                      <input type="text" class="form-control" value="<?php echo $_SESSION['telephone'] ?>" name="telephone" placeholder="06..." required>
+
+                    </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-5 mb-3">
+                          <label for="dateNaissance">Date de Naissance</label>
+                          <input type="date" class="form-control" value="<?php echo $_SESSION['date_naissance'] ?>" name="dateNaissance" required>
+                      </div>
+                  </div>
+                  <hr class="mb-4">
+                    <a href="connect.php"><button class="btn btn-success btn-lg " name="inscription" type="submit">Modifier</button></a>
+                </form>
+          </div>
+            <div>
+                 <section>
                 <br>
                 <div class="bloc1">
                 <h3> Publications </h3>
@@ -166,7 +210,9 @@ if (isset($_POST['supprimer'])){
                       ?>
                 </div>
             </section>
-        </div>
+
+            </div>
+             </div>
     </body>
     <br>
     <br>
