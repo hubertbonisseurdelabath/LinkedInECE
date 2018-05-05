@@ -3,16 +3,26 @@ session_start();
 $pdo = new PDO('mysql:host=localhost;dbname=web','root','root',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 
 $publication=$_POST['publication'];
-
+$modif_publi=$_POST['modif_publi'];
 
 if (isset($_POST['modifier'])){
-    $req1= $pdo->prepare('UPDATE publication(id_utilisateur, nb_jaime, nb_comm, heure, date, contenu) VALUES(?, ?, ?, CURTIME(), CURDATE(), ?) WHERE id_publi=?');
-    $req1->execute(array($_SESSION['id_utilisateur'],0,0,$publication,1));
+    $req_publi = $pdo->prepare('SELECT * FROM publication WHERE id_utilisateur = ?');
+    $req_publi->execute(array($_SESSION['id_utilisateur']));
+    $id_publi =$req_publi['id_publi'];
+    echo id_publi;
+
+    $req1= $pdo->prepare('UPDATE publication SET contenu=? WHERE id_publi=?');
+    $req1->execute(array($modif_publi,$id_publi));
     header("Location:profil.php");
 }
 
 
 if (isset($_POST['supprimer'])){
+    $req_publi = $pdo->prepare('SELECT * FROM publication WHERE id_utilisateur = ?');
+    $req_publi->execute(array($_SESSION['id_utilisateur']));
+    $id_publi =$publi['id_publi'];
+
+
     $req1= $pdo->prepare('DELETE FROM publication WHERE id_publi=?');
     $req1->execute(array($id_publi));
     header("Location:profil.php");
@@ -139,13 +149,13 @@ if (isset($_POST['supprimer'])){
                       while ($publi = $req_publi->fetch())
 			          {
 
-                        $id_publi =$publi['id_publi'];
+
                         if($publi['contenu']!=NULL){ ?>
                     <div class="bloc">
                         <h2>@<?php echo $_SESSION['prenom'] ?></h2>
                         <p><br><?php echo $publi['contenu'] ?></p>
                         <form method="post" action="profilmodif.php">
-                        <label val="<?php echo $pulication?>" ></label>
+                        <input type="text" id="inputModif" value="<?php echo $publi['contenu'] ?> " width=150 class="form-control" name="modif_publi" required>
                         <button class=" btn btn-xs btn-primary" type="submit" name="modifer">Modifier</button>
                         <button class=" btn btn-xs btn-primary" type="submit" name="supprimer">Supprimer</button>
                         </form>
@@ -157,7 +167,7 @@ if (isset($_POST['supprimer'])){
                 </div>
             </section>
         </div>
-        </body>
+    </body>
     <br>
     <br>
     <br>

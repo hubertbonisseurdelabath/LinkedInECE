@@ -6,10 +6,8 @@ $publication=$_POST['publication'];
 
 
 if (isset($_POST['publier']) && $publication!=NULL){
-    echo 'ma bite';
     $req1= $pdo->prepare('INSERT INTO publication(id_utilisateur, nb_jaime, nb_comm, heure, date, contenu) VALUES(?, ?, ?, CURTIME(), CURDATE(), ?)');
     $req1->execute(array($_SESSION['id_utilisateur'],0,0,$publication));
-    echo 'wtf';
     header("Location:profil.php");
 }
 
