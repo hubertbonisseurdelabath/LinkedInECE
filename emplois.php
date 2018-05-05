@@ -10,15 +10,15 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="icon" href="../../../../favicon.ico">
 
     <title>Mon réseau</title>
 
-    <!-- Bootstrap core CSS -->
     <link href="bootstrap.min.css" rel="stylesheet">
 
 
-    <!-- Custom styles for this template -->
+
     <link href="emplois.css" rel="stylesheet">
   </head>
 
